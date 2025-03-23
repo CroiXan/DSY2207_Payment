@@ -22,7 +22,11 @@ public class PaymentFunctions {
 
     private PaymentDataService paymentDataService;
 
-   @FunctionName("createpayment")
+    public PaymentFunctions() {
+        paymentDataService = new PaymentDataService();
+    }
+
+    @FunctionName("createpayment")
     public HttpResponseMessage postCreate(
         @HttpTrigger(
             name = "request",
